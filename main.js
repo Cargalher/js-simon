@@ -5,20 +5,21 @@
 4.Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.*/
 
 
-
+var randomNumber;
 function generateRandomNumber (){
     var randomNumber = Math.floor(Math.random() * 20);
     // console.log(randomNumber);
 }
 generateRandomNumber();
 
-var arr = [];
+var randomNumbers = [];
 for (var i=0; i<5; i++){
-// var randomNum = generateRandomNumber();
-arr.push(randomNumber)
+    generateRandomNumber();
+    var randomNum = generateRandomNumber() 
+    randomNumbers.push(randomNum);
 }
 
-console.log(arr);
+console.log(randomNumbers);
 
 
 
