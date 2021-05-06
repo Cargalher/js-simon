@@ -7,7 +7,7 @@
 
 var randomNumber;
 function generateRandomNumber (){
-    var randomNumber = Math.floor(Math.random() * 20);
+   return randomNumber = Math.floor(Math.random() * 20);
     
 }
 generateRandomNumber();
@@ -23,7 +23,7 @@ console.log(randomNumbers);
 alert(" Remember these numbers: " + (randomNumbers))
 
 
-var timer = 30;
+var timer = 5;
 var intervallo = setInterval (function(){
 
     if(timer === 0){
