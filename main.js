@@ -8,7 +8,7 @@
 var randomNumber;
 function generateRandomNumber (){
     var randomNumber = Math.floor(Math.random() * 20);
-    console.log(randomNumber);
+    
 }
 generateRandomNumber();
 
@@ -20,8 +20,20 @@ for (var i=0; i<5; i++){
 }
 
 console.log(randomNumbers);
-alert(" these are your 5 random numbers: " + (randomNumbers))
+alert(" Remember these numbers: " + (randomNumbers))
 
 
+var timer = 30;
+var intervallo = setInterval (function(){
+
+    if(timer === 0){
+        prompt('Insert the numbers you saw before:!');
+        clearInterval(intervallo);
+
+    }else{
+        timer--;
+    }
+    document.getElementById('seconds').innerHTML = timer;
 
 
+},1000);
