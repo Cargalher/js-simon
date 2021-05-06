@@ -27,7 +27,9 @@ var timer = 5;
 var intervallo = setInterval (function(){
 
     if(timer === 0){
-        prompt('Insert the numbers you saw before:!');
+        for (var i=0; i<5; i++){
+           prompt('Insert the numbers you saw before:!'); 
+        }
         clearInterval(intervallo);
 
     }else{
