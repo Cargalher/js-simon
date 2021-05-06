@@ -8,7 +8,7 @@
 var randomNumber;
 function generateRandomNumber (){
     var randomNumber = Math.floor(Math.random() * 20);
-    // console.log(randomNumber);
+    console.log(randomNumber);
 }
 generateRandomNumber();
 
@@ -20,22 +20,8 @@ for (var i=0; i<5; i++){
 }
 
 console.log(randomNumbers);
+alert(" these are your 5 random numbers: " + (randomNumbers))
 
 
 
 
-
-// function generateRandomNumber(min, max) { // min and max included 
-//     return Math.floor(Math.random()*(max - min + 1) + min);
-// }
-
-// generateRandomNumber(1, 100);
-// console.log(generateRandomNumber(1, 100));
-// alert ("Remember these numbers: " + Math.floor((Math.random() * 100) + 1));
-
-// var randomNumbers = [];
-// for (var i=0; i<5; i++){
-
-// }
-// var randomNum = generateFiveRandomNumbers(min, max);
-// console.log(randomNum);
