@@ -23,70 +23,36 @@ console.log(randomNumbers);
 alert(" Remember these numbers: " + (randomNumbers))                        //alert to the user showing the 5 random numbers
 
 
-var timer = 5;
-var intervallo = setInterval (function(){                                   //Inserting a 30s interval
+var userGuess = [];
+//var timer = 5;
+//var intervallo = setInterval (function(){                                   //Inserting a 30s interval
 
-    if(timer === 0){                                                        //asking user the random numbers he saw before, one at a time with 5 diff. prompts.
+//    if(timer === 0){                                                        //asking user the random numbers he saw before, one at a time with 5 diff. prompts.
         for (var i=0; i<5; i++){
-           prompt('Insert the numbers you saw before:!'); 
+            userNumber = Number(window.prompt('Insert the numbers you saw before:!'));
+            userGuess.push(userNumber); 
         }
-        clearInterval(intervallo);
+//        clearInterval(intervallo);
 
-    }else{
-        timer--;
+//    }else{
+//        timer--;
+//    }
+//    document.getElementById('seconds').innerHTML = timer;                   //showing in browser countdown
+//},1000);
+
+console.log(userGuess);
+
+var rightGuesses = [];
+
+for(var j=0; j<randomNumbers.length; j++) {
+    for(var k=0; k<userGuess.length; k++) {
+        if (randomNumbers[j] === userGuess[k]){
+            rightGuesses.push(randomNumbers[j]);
+            console.log("You got it right the number " + userGuess[k] + " was the right guess!");
+        }
     }
-    document.getElementById('seconds').innerHTML = timer;                   //showing in browser countdown
-},1000);
 
+};
 
-
-// Tell user how many numbers and which ones he guessed
-var guessingNumber;
-var answer;
-// if(answer === [0] || answer === [1] || answer === [2] || answer === [3] || answer === [4]){
-// alert("You guessed");
-// }else{
-//     alert("Sorry, wrong number inserted!");
-// };
-
-
-/*switch (guessingNumber){
-case [0]: 
-    answer = alert("You guessed number: " + [0]);
-    break;
-case [1]:
-    answer = alert("You guessed number: " + [1]);
-    break;
-case [2]:
-    answer = alert("You guessed number: " + [2]);
-    break;
-case [3]:
-    answer = alert("You guessed number: " + [3]);
-    break;
-case [4]:
-    answer = alert("You guessed number: " + [4]);
-    break;
-default:
-    answer = alert("Sorry, wrong number inserted!");
-}*/
-
-/*switch (guessingNumber){
-    case [0]: 
-        answer = "You guessed number: " + [0];
-        break;
-    case [1]:
-        answer = "You guessed number: " + [1];
-        break;
-    case [2]:
-        answer = "You guessed number: " + [2];
-        break;
-    case [3]:
-        answer = "You guessed number: " + [3];
-        break;
-    case [4]:
-        answer ="You guessed number: " + [4];
-        break;
-    default:
-        answer = "Sorry, wrong number inserted!";
-    }
-    document.getElementById("text").innerHTML = answer;*/
+console.log("You remembered " + rightGuesses.length + " numbers right." )
+console.log("You got it right the numbers " + rightGuesses + " were the same");
