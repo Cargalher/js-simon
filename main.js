@@ -29,7 +29,7 @@ var userGuess = [];
 
 //    if(timer === 0){                                                        //asking user the random numbers he saw before, one at a time with 5 diff. prompts.
         for (var i=0; i<5; i++){
-            userNumber = Number(window.prompt('Insert the numbers you saw before:!'));
+            userNumber = Number(window.prompt('Insert the numbers you saw before!:'));
             userGuess.push(userNumber); 
         }
 //        clearInterval(intervallo);
@@ -54,5 +54,7 @@ for(var j=0; j<randomNumbers.length; j++) {
 
 };
 
-console.log("You remembered " + rightGuesses.length + " numbers right." )
-console.log("You got it right the numbers " + rightGuesses + " were the same");
+console.log("Well done! You remembered " + rightGuesses.length + " number/s right." );
+console.log("You got it right the number/s " + rightGuesses + " were the same");
+alert("Well done! You remembered " + rightGuesses.length + " number/s right.");
+alert("You guessed the number/s: " + rightGuesses );
