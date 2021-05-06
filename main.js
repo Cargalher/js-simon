@@ -6,27 +6,27 @@
 
 
 var randomNumber;
-function generateRandomNumber (){
+function generateRandomNumber (){                                           //generate random numbers between 1-20.
    return randomNumber = Math.floor(Math.random() * 20);
     
 }
-generateRandomNumber();
+generateRandomNumber();                                                     //call the function
 
-var randomNumbers = [];
+var randomNumbers = [];                                                     //empty array to store random numbers
 for (var i=0; i<5; i++){
     generateRandomNumber();
     var randomNum = generateRandomNumber() 
-    randomNumbers.push(randomNum);
+    randomNumbers.push(randomNum);                                          //inserting random numbers inside my empty array
 }
 
 console.log(randomNumbers);
-alert(" Remember these numbers: " + (randomNumbers))
+alert(" Remember these numbers: " + (randomNumbers))                        //alert to the user showing the 5 random numbers
 
 
 var timer = 5;
-var intervallo = setInterval (function(){
+var intervallo = setInterval (function(){                                   //Inserting a 30s interval
 
-    if(timer === 0){
+    if(timer === 0){                                                        //asking user the random numbers he saw before, one at a time with 5 diff. prompts.
         for (var i=0; i<5; i++){
            prompt('Insert the numbers you saw before:!'); 
         }
@@ -35,7 +35,5 @@ var intervallo = setInterval (function(){
     }else{
         timer--;
     }
-    document.getElementById('seconds').innerHTML = timer;
-
-
+    document.getElementById('seconds').innerHTML = timer;                   //showing in browser countdown
 },1000);
