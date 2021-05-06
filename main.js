@@ -37,3 +37,56 @@ var intervallo = setInterval (function(){                                   //In
     }
     document.getElementById('seconds').innerHTML = timer;                   //showing in browser countdown
 },1000);
+
+
+
+// Tell user how many numbers and which ones he guessed
+var guessingNumber;
+var answer;
+// if(answer === [0] || answer === [1] || answer === [2] || answer === [3] || answer === [4]){
+// alert("You guessed");
+// }else{
+//     alert("Sorry, wrong number inserted!");
+// };
+
+
+/*switch (guessingNumber){
+case [0]: 
+    answer = alert("You guessed number: " + [0]);
+    break;
+case [1]:
+    answer = alert("You guessed number: " + [1]);
+    break;
+case [2]:
+    answer = alert("You guessed number: " + [2]);
+    break;
+case [3]:
+    answer = alert("You guessed number: " + [3]);
+    break;
+case [4]:
+    answer = alert("You guessed number: " + [4]);
+    break;
+default:
+    answer = alert("Sorry, wrong number inserted!");
+}*/
+
+/*switch (guessingNumber){
+    case [0]: 
+        answer = "You guessed number: " + [0];
+        break;
+    case [1]:
+        answer = "You guessed number: " + [1];
+        break;
+    case [2]:
+        answer = "You guessed number: " + [2];
+        break;
+    case [3]:
+        answer = "You guessed number: " + [3];
+        break;
+    case [4]:
+        answer ="You guessed number: " + [4];
+        break;
+    default:
+        answer = "Sorry, wrong number inserted!";
+    }
+    document.getElementById("text").innerHTML = answer;*/
