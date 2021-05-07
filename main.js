@@ -4,6 +4,11 @@
 3.Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 4.Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.*/
 
+var randomNumbers = [];                                                     //empty array to store random numbers
+
+var userGuess = [];                                                         //declaring empty array to store the user choices
+
+var rightGuesses = [];                                                        //declaring an array to store the right guesses from the user
 
 var randomNumber;
 function generateRandomNumber (){                                           //generate random numbers between 1-20.
@@ -12,7 +17,7 @@ function generateRandomNumber (){                                           //ge
 }
 generateRandomNumber();                                                     //call the function
 
-var randomNumbers = [];                                                     //empty array to store random numbers
+//var randomNumbers = [];                                                     //empty array to store random numbers
 for (var i=0; i<5; i++){
     generateRandomNumber();
     var randomNum = generateRandomNumber() 
@@ -23,13 +28,13 @@ console.log(randomNumbers);
 alert(" Remember these numbers: " + (randomNumbers))                        //alert to the user showing the 5 random numbers
 
 
-var userGuess = [];
+//var userGuess = [];                                                         //declaring empty array to store the user choices
 //var timer = 5;
 //var intervallo = setInterval (function(){                                   //Inserting a 30s interval
 
 //    if(timer === 0){                                                        //asking user the random numbers he saw before, one at a time with 5 diff. prompts.
         for (var i=0; i<5; i++){
-            userNumber = Number(window.prompt('Insert the numbers you saw before!:'));
+            userNumber = Number (prompt('Insert the numbers you saw before!:'));
             userGuess.push(userNumber); 
         }
 //        clearInterval(intervallo);
@@ -42,19 +47,27 @@ var userGuess = [];
 
 console.log(userGuess);
 
-var rightGuesses = [];
+randomNumbers = randomNumbers.sort(function(a, b) {                           //using a function to sort the numbers in the array
+    return a - b;
+  });
+console.log(randomNumbers);
 
-for(var j=0; j<randomNumbers.length; j++) {
-    for(var k=0; k<userGuess.length; k++) {
-        if (randomNumbers[j] === userGuess[k]){
-            rightGuesses.push(randomNumbers[j]);
-            console.log("You got it right the number " + userGuess[k] + " was the right guess!");
+userGuess = userGuess.sort(function(a, b) {                                   //using a function to sort the numbers in the array
+    return a - b;
+});
+console.log(userGuess);
+
+//var rightGuesses = [];                                                        //declaring an array to store the right guesses from the user
+
+for(var j=0; j<randomNumbers.length; j++) {                                   //using a for loop to compare the two arrays and check for the same numbers
+    if (randomNumbers[j] === userGuess[j]){
+            rightGuesses.push(randomNumbers[j]);                              //pushing the numbers that are the same into the rightGuesses Array
+            console.log("You got it right the number " + randomNumbers[j] + " was the right guess!");
         }
-    }
 
 };
 
 console.log("Well done! You remembered " + rightGuesses.length + " number/s right." );
 console.log("You got it right the number/s " + rightGuesses + " were the same");
-alert("Well done! You remembered " + rightGuesses.length + " number/s right.");
-alert("You guessed the number/s: " + rightGuesses );
+alert("Well done! You remembered " + rightGuesses.length + " number/s right.");         //showing to the user how many numbers he remembered
+alert("You guessed the number/s: " + rightGuesses );   
