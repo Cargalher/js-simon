@@ -24,7 +24,7 @@ console.log(randomNumbers);
 alert(" Remember these numbers: " + randomNumbers); // alert to the user showing the 5 random numbers
 
 
-var timer = 5;                             //setting a timer of 30 seconds
+var timer = 30;                             //setting a timer of 30 seconds
 var intervallo = setInterval(function () { // Inserting a 30s interval
 
     if (timer === 0) { // asking user the random numbers he saw before, one at a time with 5 diff. prompts.
